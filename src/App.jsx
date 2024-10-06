@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
 import './App.css';
-import self_photo from './assets/seaside.jpg'; // 使用require或import导入图片
+import self_photo from './assets/seaside.jpg';
 import img_linkedin from './assets/linkedin.png';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
 import img_redbook from './assets/Xiaohongshu.png';
-import logoBaidu from './assets/baidu_logo.png'; // 替换为实际路径
-import logoIFLYTEK from './assets/iflytek_logo.jpg'; // 替换为实际路径
-import logoGM from './assets/gm_logo.png'; // 替换为实际路径
-import logoHashKey from './assets/hashkey_logo.png'; // 替换为实际路径
-
+import logoBaidu from './assets/baidu_logo.png';
+import logoIFLYTEK from './assets/iflytek_logo.jpg';
+import logoGM from './assets/gm_logo.png';
+import logoHashKey from './assets/hashkey_logo.png';
+import snowboarding1 from './assets/Snowboarding1.jpg';
+import snowboarding2 from './assets/Snowboarding3.jpg';
+import snowboarding3 from './assets/Snowboarding4.jpg';
+import traveling1 from './assets/France.jpg';
+import traveling2 from './assets/Italy.jpg';
+import traveling3 from './assets/Belgium.jpg';
+import traveling4 from './assets/Germany.jpg';
+import traveling5 from './assets/Austria.jpg';
+import traveling6 from './assets/Netherlands.jpg';
+import traveling7 from './assets/Sweden.jpg';
+import traveling8 from './assets/England.jpg';
+import traveling9 from './assets/Norway.jpg';
+import traveling10 from './assets/Poland.jpg';
+import traveling11 from './assets/Scotland.jpg';
+import traveling12 from './assets/Spain.jpg';
+import photography1 from './assets/Shanghai.jpg';
+import photography2 from './assets/Beijing.jpg';
+import photography3 from './assets/Berlin.jpg';
+import photography4 from './assets/Cologne.jpg';
+import photography5 from './assets/Milan.jpg';
+import photography6 from './assets/Venice.jpg';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('education');
-  
-  // 示例数据，你需要替换成自己的信息
+  const [activeTab, setActiveTab] = useState('campus');
+  const [language, setLanguage] = useState('en');
+
   const personalInfo = {
     name: 'Zhengzhi Zhou',
     contact: 'monikazhou@foxmail.com',
@@ -24,7 +44,6 @@ function App() {
     twitter: 'https://x.com/kkk222206',
     github: 'https://github.com/NikaChou',
     redbook: 'https://www.xiaohongshu.com/user/profile/63df800900000000260076e6?xhsshare=CopyLink&appuid=63df800900000000260076e6&apptime=1728121625',
-
   };
 
   const educations = [
@@ -44,26 +63,26 @@ function App() {
   const awards = [
     '2021 National Second Prize, National College English Vocabulary Competition',
     '2020 National Second Prize, National Innovation English Challenge',
-    '2020 Honorable Mention Chinese Culture International Translation Competition',
+    '2020 Honorable Mention, Chinese Culture International Translation Competition',
   ];
 
   const academic_Achievements = [
     {
-      title: "Chinese Literary Perception under Western Discourse: A Case Study of the Aesthetic View of Tang Poetry in Wilhelm Grube's 'History of Chinese Literature'",
+      title: "Chinese Literary Conception under Western Discourse: A Case Study of the Aesthetic View of Tang Poetry in Wilhelm Grube's 'History of Chinese Literature'",
       description: "First Author, published in the annual journal German Studies (2022)",
     },
     {
       title: 'Multiple Paths to a Doctorate Degree: A Comparative Study on Doctoral Education and Evaluation at Universities of Applied Sciences',
-      description: 'First Author, published in the journal Shanghai Graduate Education (2023, first issue)',
+      description: 'First Author, published in the journal Shanghai Graduate Education (2023)',
     },
   ];
 
   const campus_activities = [
     '2023-Now President, Fudan Job Hunt Club',
     '2024-Now Vice President, Fudan University Blockchain Association',
-    '2022-2023 Core Member of Fudan University Graduate Admissions Promotion Team',
+    '2022-2023 Core Member,Fudan University Graduate Admissions Promotion Team',
     '2020-2021 Director of External Relations, Students\' Union, Huazhong University of Science and Technology',
-    '2019-2021 Core Member of University History Museum, Huazhong University of Science and Technology'
+    '2019-2021 Core Member,University History Museum, Huazhong University of Science and Technology'
   ];
 
   const innovation_practice_projects = [
@@ -77,7 +96,6 @@ function App() {
     },
   ];
 
-
   const internships = [
     {
       title: 'Strategic Analysis @Baidu (China) Co., Ltd.',
@@ -85,8 +103,8 @@ function App() {
       description: (
         <>
           2024, Intern, in Autonomous Driving Group <br />
-          - Conducted a study on the IPO of WeRide, produced 2 reports and 10 core insights for references. <br />
-          - Conducted market analysis based on foreign investment research reports, producing 7 weekly reports.
+          •	Target Research: Conducted a study on the IPO of WeRide. Produced 2 reports and 10 core insights for insights and references <br />
+          •	Market Analysis: Conducted researches based on foreign investment research reports. Tracked research reports on peer companies, producing 7 weekly reports.
         </>
       ),
     },
@@ -96,8 +114,8 @@ function App() {
       description: (
         <>
           2024, Intern, Voice Interaction APP <br />
-          - Assisted in multilingual TTS business, resulting in 3 detailed feature lists. <br />
-          - Analyzed key indicators for improved performance: 5pt in recognition rate and 3pt in wake-up rate.
+          •	Version Iteration: Analyzed key indicators with improved performance: 5pt in recognition rate and 3pt in wake-up rate. <br />
+          •	Product Research: Conducted research on high-frequency words for the products tailored to Anhui dialects, assisted in the completion of a focused feature list by the factory research team.
         </>
       ),
     },
@@ -107,8 +125,8 @@ function App() {
       description: (
         <>
           2024, Intern, in Planning Department <br />
-          - Conducted research on vehicle and consumer, producing 2 insightful reports with 2 recommendations adopted. <br />
-          - Prepared reports for an imported SUV case with quantitative and qualitative research.
+          •	Market Research: Conducted research on vehicle and consumer. Analyzed potential competitive models and produced 2 insightful reports, with 2 recommendations adopted. <br />
+          •	Product Positioning: Prepared for an imported SUV case with quantitative and qualitative research, resulting in 2 reports.
         </>
       ),
     },
@@ -118,8 +136,8 @@ function App() {
       description: (
         <>
           2023, Intern, in ToB Cloud Products Department <br />
-          - Completed market analysis and forecasts for target regions, proposing 4 recommendations adopted by the team. <br />
-          - Analyzed competitive products with in-depth research on 2 strong competitors.
+          •	Industry Research: Completed market analysis and forecasts for target regions, proposing 4 recommendations, adopted by the team <br />
+          •	Competitive Analysis: Analyzed competitive products with in-depth research on 2 strong competitors. Produced a 30-page report
         </>
       ),
     },
@@ -146,18 +164,92 @@ function App() {
   ];
 
   const volunteerActivities = [
-    '2023年 参与上海马拉松志愿者活动',
-    '2022年 参与社区疫情防控志愿服务',
-    '2021年 参与山区支教志愿活动'
+    '2023 Shanghai Jewish Refugees Museum - Guide Volunteer',
+    '2022 Fudan University - Admission Volunteer',
+    '2019-2021 Campus History Museum - Volunteer Guide',
+    '2021 Wuhan East Lake Park - Park Volunteer',
+    '2021 Wuhan Art Museum - Volunteer',
+    '2020 Hubei Provincial Hospital of Traditional Chinese Medicine - Volunteer',
+    '2021 Campus Marathon - Volunteer',
+    
   ];
+
+  const researchProjects = [
+    {
+      title: "Case Study: DM (German Pharmacy's) Digital Transformation Challenges",
+      year: "2023",
+      description: [
+        "Researched DM's legacy and digital systems' integration challenges during its digital transformation, including data migration, consumer habit guidance, and the integration of online and offline marketing.",
+        "Visited DM stores in major German cities for surveys and interviews, contributing to 2 research reports and achieving 2nd place in group evaluation."
+      ]
+    },
+   
+    {
+      title: 'Summer Research: "Short Videos for Poverty Alleviation in Mountainous Areas: A Case Study of Kuaishou Live Streaming"',
+      year: "2019",
+      description: [
+        "Research Focus: Investigated the impact of Kuaishou live streaming on agricultural product sales in impoverished areas of Xiaojin County, Aba Prefecture. Used social media analytics to study platform support like algorithms, traffic, subsidies, and events.",
+        "Responsibilities: Managed sponsorships, conducted interviews, and wrote press releases.",
+        "Outcome: The project was recognized as an outstanding practice project at the school, provincial, and national levels and led to the establishment of a summer practice base for HUST in the area."
+      ]
+    }
+  ];
+
+  const translations = {
+    en: {
+      campus: "Campus Life",
+      experience: "Internships & Projects",
+      personal: "Personal Life",
+      education: "Education",
+      honors: "Honors and Awards",
+      academic: "Academic Achievements",
+      activities: "Campus Activities",
+      innovation: "Innovation Practice Projects",
+      internships: "Internships",
+      projects: "Research Projects",
+      hobbies: "Hobbies",
+      arts: "Art Appreciation",
+      volunteer: "Volunteer Activities"
+    },
+    zh: {
+      campus: "校园生活",
+      experience: "实习与项目",
+      personal: "个人生活",
+      education: "教育经历",
+      honors: "荣誉奖项",
+      academic: "学术成果",
+      activities: "校园活动",
+      innovation: "创新实践项目",
+      internships: "实习经历",
+      projects: "研究项目",
+      hobbies: "兴趣爱好",
+      arts: "艺术鉴赏",
+      volunteer: "志愿活动"
+    },
+    de: {
+      campus: "Campusleben",
+      experience: "Praktika & Projekte",
+      personal: "Persönliches Leben",
+      education: "Bildung",
+      honors: "Auszeichnungen und Ehrungen",
+      academic: "Akademische Leistungen",
+      activities: "Campus-Aktivitäten",
+      innovation: "Innovative Praxisprojekte",
+      internships: "Praktika",
+      projects: "Forschungsprojekte",
+      hobbies: "Hobbys",
+      arts: "Kunstverständnis",
+      volunteer: "Freiwilligenarbeit"
+    }
+  };
 
   const renderContent = () => {
     switch(activeTab) {
-      case 'education':
+      case 'campus':
         return (
           <div className="flex flex-col space-y-8">
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">教育经历</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].education}</h2>
               <ul className="list-disc pl-5 space-y-2">
                 {educations.map((edu, index) => (
                   <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{edu}</li>
@@ -165,10 +257,10 @@ function App() {
               </ul>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">荣誉奖项</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].honors}</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">校园荣誉</h3>
+                  <h3 className="text-xl font-semibold mb-2">Campus Honors</h3>
                   <ul className="list-disc pl-5 space-y-2">
                     {honors.map((honor, index) => (
                       <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
@@ -176,7 +268,7 @@ function App() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">竞赛奖项</h3>
+                  <h3 className="text-xl font-semibold mb-2">Competition Awards</h3>
                   <ul className="list-disc pl-5 space-y-2">
                     {awards.map((award, index) => (
                       <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
@@ -186,7 +278,7 @@ function App() {
               </div>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">学术成果</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].academic}</h2>
               <div className="grid grid-cols-1 gap-6">
                 {academic_Achievements.map((achievement, index) => (
                   <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
@@ -197,7 +289,7 @@ function App() {
               </div>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">校园活动</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].activities}</h2>
               <ul className="list-disc pl-5 space-y-2">
                 {campus_activities.map((activity, index) => (
                   <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{activity}</li>
@@ -205,7 +297,7 @@ function App() {
               </ul>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">创新实践项目</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].innovation}</h2>
               <div className="grid grid-cols-1 gap-4">
                 {innovation_practice_projects.map((project, index) => (
                   <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-4 hover:bg-gray-300">
@@ -221,7 +313,7 @@ function App() {
         return (
           <div className="flex flex-col space-y-8">
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">实习经历</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].internships}</h2>
               <div className="space-y-6">
                 {internships.map((internship, index) => (
                   <div key={index} className="flex items-start space-x-4 p-4 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200">
@@ -234,43 +326,90 @@ function App() {
                 ))}
               </div>
             </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].projects}</h2>
+              <div className="space-y-6">
+                {researchProjects.map((project, index) => (
+                  <div key={index} className="p-4 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200">
+                    <h3 className="text-lg font-semibold mb-2">{project.title} ({project.year})</h3>
+                    <ul className="list-disc pl-5 space-y-2">
+                      {project.description.map((desc, i) => (
+                        <li key={i} className="text-gray-600">{desc}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         );
       case 'personal':
         return (
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-12">
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">兴趣爱好</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
-                  <h3 className="text-lg font-semibold mb-2">旅游</h3>
-                  <p>热爱探索世界各地的文化和风景，已经去过20多个国家。</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">{translations[language].hobbies}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="col-span-1 md:col-span-2 lg:col-span-3">
+                  <h3 className="text-xl font-semibold mb-4">Traveling</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src={traveling1} alt="France" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling2} alt="Italy" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling3} alt="Belgium" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling4} alt="Germany" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling5} alt="Austria" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling6} alt="Netherlands" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling7} alt="Sweden" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling8} alt="England" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling9} alt="Norway" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling10} alt="Poland" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling11} alt="Scotland" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={traveling12} alt="Spain" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                  </div>
+                  <p className="mt-4">Love exploring cultures and landscapes around the world, visited over 20 countries.</p>
                 </div>
-                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
-                  <h3 className="text-lg font-semibold mb-2">摄影</h3>
-                  <p>喜欢用镜头捕捉生活中的美好瞬间，擅长风景和人像摄影。</p>
+                <div className="col-span-1 md:col-span-2">
+                  <h3 className="text-xl font-semibold mb-4">Photography</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <img src={photography1} alt="Shanghai" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={photography2} alt="Beijing" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={photography3} alt="Beijing" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={photography4} alt="Beijing" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={photography5} alt="Beijing" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={photography6} alt="Beijing" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                  </div>
+                  <p className="mt-4">Enjoy capturing beautiful moments, specializing in landscape and urban photography.</p>
                 </div>
-                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
-                  <h3 className="text-lg font-semibold mb-2">滑雪</h3>
-                  <p>每年冬季都会去不同的滑雪胜地体验刺激的滑雪运动。</p>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Snowboarding</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    <img src={snowboarding1} alt="Snowboarding 1" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={snowboarding2} alt="Snowboarding 2" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                    <img src={snowboarding3} alt="Snowboarding 2" className="w-full h-48 object-cover rounded-lg shadow-md" />
+                  </div>
+                  <p className="mt-4">Visit different ski resorts every winter to experience the thrill of snowboarding.</p>
                 </div>
               </div>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">艺术鉴赏</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
-                  <h3 className="text-lg font-semibold mb-2">绘画</h3>
-                  <p>业余时间喜欢素描和水彩创作，曾参加多次艺术展览。</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">{translations[language].arts}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Museum Visits</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <img src={museum1} alt="Louvre" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={museum2} alt="British Museum" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                  </div>
+                  <p className="mt-4">Frequently visit art museums to appreciate various art styles and broaden artistic vision.</p>
                 </div>
-                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
-                  <h3 className="text-lg font-semibold mb-2">美术馆</h3>
-                  <p>经常参观各地美术馆，欣赏不同流派的艺术作品，拓展艺术视野。</p>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4">Painting</h3>
+                  <div className="w-full h-40 bg-gray-300 rounded-lg shadow-md"></div>
+                  <p className="mt-4">Enjoy sketching and watercolor painting in spare time, participated in several art exhibitions.</p>
                 </div>
               </div>
             </section>
             <section>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">志愿活动</h2>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].volunteer}</h2>
               <ul className="list-disc pl-5 space-y-2">
                 {volunteerActivities.map((activity, index) => (
                   <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{activity}</li>
@@ -290,10 +429,10 @@ function App() {
         <ul className="flex justify-center space-x-4">
           <li>
             <button
-              className={`text-white ${activeTab === 'education' ? 'font-bold' : ''}`}
-              onClick={() => setActiveTab('education')}
+              className={`text-white ${activeTab === 'campus' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('campus')}
             >
-              教育经历
+              {translations[language].campus}
             </button>
           </li>
           <li>
@@ -301,7 +440,7 @@ function App() {
               className={`text-white ${activeTab === 'experience' ? 'font-bold' : ''}`}
               onClick={() => setActiveTab('experience')}
             >
-              实习经历
+              {translations[language].experience}
             </button>
           </li>
           <li>
@@ -309,11 +448,23 @@ function App() {
               className={`text-white ${activeTab === 'personal' ? 'font-bold' : ''}`}
               onClick={() => setActiveTab('personal')}
             >
-              个人生活
+              {translations[language].personal}
             </button>
           </li>
         </ul>
       </nav>
+      
+      <div className="flex justify-end mt-2">
+        <select
+          value={language}
+          onChange={(e) => setLanguage(e.target.value)}
+          className="bg-gray-100 border border-gray-300 rounded-md px-2 py-1"
+        >
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
       
       <div className="flex flex-col md:flex-row gap-4 mt-4">
         <div className="container basis-1/4 bg-gradient-to-b from-gray-200 rounded-xl flex-col space-y-8 p-4 max-w-sm mx-auto">
