@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import self_photo from './assets/seaside_self_proflie.jpg'; // 使用require或import导入图片
-import img_linkedin from './assets/linkedin.svg';
+import self_photo from './assets/psc.jpg'; // 使用require或import导入图片
+import img_linkedin from './assets/twitter.svg';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
-import img_redbook from './assets/xiaohongshu.png';
+import img_redbook from './assets/psc.png';
 
 
 function App() {
@@ -35,14 +35,14 @@ function App() {
   ];
 
   const awards = [
-    '2021 National Second Prize, National College English Vocabulary Competitionn',
+    '2021 National Second Prize, National College English Vocabulary Competition',
     '2020 National Second Prize, National Innovation English Challenge',
     '2020 Honorable Mention Chinese Culture International Translation Competition',
   ];
 
   const academic_Achievements = [
     {
-      title: 'Chinese Literary Perception under Western Discourse: A Case Study of the Aesthetic View of Tang Poetry in Wilhelm Grube's 'History of Chinese Literature',
+      title: "Chinese Literary Perception under Western Discourse: A Case Study of the Aesthetic View of Tang Poetry in Wilhelm Grube's 'History of Chinese Literature'",
       description: "First Author, published in the annual journal German Studies (2022)",
     },
     {
