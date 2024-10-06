@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import self_photo from './assets/psc.png'; // 使用require或import导入图片
-import img_linkedin from './assets/twitter.svg';
+import self_photo from './assets/seaside.png'; // 使用require或import导入图片
+import img_linkedin from './assets/linkedin.jpg';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
-import img_redbook from './assets/psc.png';
+import img_redbook from './assets/Xiaohongshu.png';
 
 
 function App() {

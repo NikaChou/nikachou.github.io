@@ -15,6 +15,6 @@ export default {
   },
   plugins: [require("daisyui")],
     daisyui: {
-    themes: ["winter", "cupcake", "emerald", "garden", "pastel", "dark", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee"],
+    themes: ["cupcake", "emerald", "garden", "pastel", "dark", "cmyk", "autumn", "business", "acid", "lemonade", "night", "coffee"],
   },
   }
