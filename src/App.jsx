@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import self_photo from './assets/seaside.JPG'; // 使用require或import导入图片
+import self_photo from './assets/seaside.jpg'; // 使用require或import导入图片
 import img_linkedin from './assets/linkedin.png';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
