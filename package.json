@@ -1,9 +1,9 @@
 {
-  "homepage": "https://raccoondml.github.io",
-  "name": "raccoondml",
+  "homepage": "https://nikachou.github.io/Fische/",
+  "name": "NikaChou",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+    "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
