@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import self_photo from './assets/seaside.png'; // 使用require或import导入图片
-import img_linkedin from './assets/linkedin.jpg';
+import img_linkedin from './assets/linkedin.png';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
 import img_redbook from './assets/Xiaohongshu.png';
@@ -182,10 +182,7 @@ function App() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Innovation Practice Projects</h2>
             <ul className="list-disc space-y-2">
               {innovation_practice_projects.map((project, index) => (
-                <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
-                  <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <div className="text-gray-600">{project.description}</div>
-                </div>
+                <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">{project}</div>
               ))}
             </ul>
           </section>
