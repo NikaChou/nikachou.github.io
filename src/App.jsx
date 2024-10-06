@@ -142,12 +142,12 @@ function App() {
 
   return (
     <div className='container w-full mx-auto'>
-      <div class="flex flex-col md:flex-row gap-4">
-        <div class="container basis-1/4 bg-gradient-to-b from-gray-200 rounded-xl flex-col space-y-8 p-4 max-w-sm mx-auto">
-          <img  src={self_photo} className="mx-auto rounded-3xl shadow-xl" />
+      <div className="flex flex-col md:flex-row gap-4">
+        <div className="container basis-1/4 bg-gradient-to-b from-gray-200 rounded-xl flex-col space-y-8 p-4 max-w-sm mx-auto">
+          <img src={self_photo} className="mx-auto rounded-3xl shadow-xl" />
           <h1 className="text-2xl font-bold text-primary">Zhengzhi Zhou</h1>
           <h2 className="text-lg font-bold text-primary">(Nika Chou)</h2>
-
+  
           <div>
             <h2 className="text-lg font-bold">Basic Info</h2>
             <div>
@@ -162,7 +162,7 @@ function App() {
               </div>
             </div>
           </div>
-
+  
           <div>
             <h2 className="text-lg font-bold">Interests</h2>
             <div className='grid grid-cols-2 gap-4'>
@@ -171,7 +171,7 @@ function App() {
               ))}
             </div>
           </div>
-
+  
           <div>
             <h2 className="text-lg font-bold">Hobbies</h2>
             <div className='grid grid-cols-2 gap-4'>
@@ -180,28 +180,34 @@ function App() {
               ))}
             </div>
           </div>
-
+  
         </div>
-
-        <div class="container basis-3/4 rounded-xl text-left p-4 space-y-12">
-          <section className="">
+  
+        <div className="container basis-3/4 rounded-xl text-left p-4 space-y-12">
+          <section>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Education</h2>
-            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>M.S. in German Language and Literature, <span className='font-bold'>Fudan University</span>, Sep. 2022 - Jun. 2025. <span className='font-bold'>GPA-3.85/4.00</span></li>
-            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>B.S. in German Language and Literature, <span className='font-bold'>Huazhong University of Science and Technology</span>, Sep. 2018 - Jun. 2022. <span className='font-bold'>GPA-3.93/4.00</span></li>
+            <ul>
+              <li className='rounded-lg hover:bg-gradient-to-r from-primary'>M.S. in German Language and Literature, <span className='font-bold'>Fudan University</span>, Sep. 2022 - Jun. 2025. <span className='font-bold'>GPA-3.85/4.00</span></li>
+              <li className='rounded-lg hover:bg-gradient-to-r from-primary'>B.S. in German Language and Literature, <span className='font-bold'>Huazhong University of Science and Technology</span>, Sep. 2018 - Jun. 2022. <span className='font-bold'>GPA-3.93/4.00</span></li>
+            </ul>
           </section>
-
+  
           <section>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Awards and Honors</h2>
             <div className='text-lg pt-2 pb-1 font-bold'>Campus Honors</div>
-            {honors.map((honor, index) => (
-              <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
-            ))}
+            <ul>
+              {honors.map((honor, index) => (
+                <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
+              ))}
+            </ul>
             <div className='text-lg pt-2 pb-1 font-bold'>Competition Awards</div>
-            {awards.map((award, index) => (
-              <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
-            ))}
+            <ul>
+              {awards.map((award, index) => (
+                <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
+              ))}
+            </ul>
           </section>
-
+  
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Publications</h2>
             <div className="grid grid-cols-1 gap-6">
@@ -214,16 +220,14 @@ function App() {
                 </div>
               ))}
             </div>
-
             <div className='text-xl pt-8 pb-2 font-bold'>Campus Activities</div>
             <div className="grid grid-cols-1 gap-2">
               {campus_activities.map((activity, index) => (
                 <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">{activity}</div>
               ))}
             </div>
-
           </section>
-
+  
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Innovation Practice Projects</h2>
             <div className="grid grid-cols-1 gap-2">
@@ -234,24 +238,25 @@ function App() {
                 </div>
               ))}
             </div>
-
+          </section>
+  
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Internship Experience</h2>
             <ul className="list-disc space-y-2">
               {internships.map((internship, index) => (
-                <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300 flex items-center">
+                <li key={index} className="flex items-center">
                   <img src={internship.logo} alt={`${internship.title} logo`} className="w-10 h-10 mr-2" />
                   <div>
                     <h3 className="text-lg font-semibold mb-2">{internship.title}</h3>
                     <div className="text-gray-600">{internship.description}</div>
                   </div>
-                </div>
+                </li>
               ))}
             </ul>
           </section>
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 export default App;
