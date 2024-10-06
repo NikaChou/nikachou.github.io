@@ -1,123 +1,109 @@
 import React from 'react';
 import './App.css';
-import danmao from './assets/danmao8.jpg'; // 使用require或import导入图片
-import chsnet from './assets/chsnet-arch.png';
-import iks from './assets/iks-algo.png';
-import psc from './assets/psc.png';
+import self_photo from './assets/seaside_self_proflie.jpg'; // 使用require或import导入图片
+import img_linkedin from './assets/linkedin.svg';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
-import img_csdn from './assets/csdn.svg';
-import img_google_scholar from './assets/googleScholar.svg';
-
+import img_redbook from './assets/xiaohongshu.png';
 
 
 function App() {
   // 示例数据，你需要替换成自己的信息
   const personalInfo = {
-    name: 'Mingliang Dai',
-    contact: 'mldai21@m.fudan.edu.cn',
+    name: 'Zhengzhi Zhou',
+    contact: 'monikazhou@foxmail.com',
     location: 'Shanghai, China',
     school: 'Fudan University',
-    github: 'https://github.com/RaccoonDML',
-    twitter: 'https://twitter.com/raccoondml',
-    csdn: 'https://blog.csdn.net/daimaliang',
-    googleScholar: 'https://scholar.google.com/citations?user=wbPGvY8AAAAJ&hl=en',
+    linkedin: 'https://www.linkedin.com/in/zzz26',
+    twitter: 'https://x.com/kkk222206',
+    github: 'https://github.com/NikaChou',
+    redbook: 'https://www.xiaohongshu.com/user/profile/63df800900000000260076e6?xhsshare=CopyLink&appuid=63df800900000000260076e6&apptime=1728121625',
 
   };
 
   const educations = [
-    'B.S. in Computer Science and Technology, Xiamen University, 2021',
-    'M.S. in Computer Application Technology, Fudan University, 2024 (expected)',
+    'B.S. in German Language and Literature, Huazhong University of Science and Technology, Sep. 2018 - Jun. 2022. GPA-3.93/4.00',
+    'M.S. in German Language and Literature, Fudan University, Sep. 2022 - Jun. 2025 (expected), GPA-3.85/4.00',
     // 'Ph.D in Version Control Theory, GitHub University, 2018 (expected)'
   ];
 
   const honors = [
-    '2017-2018 National Encouragement Scholarship',
-    '2019-2020 AmoyDx Scholarship, Xiamen University',
-    '2019、2020、2021Merit Student, Outstanding Graduates, Xiamen University',
-    '2021-2022 Dong Scholarship, Fudan University',
+    '2022-2023 Second-Class Academic Scholarship, Outstanding Volunteer',
+    '2021-2022 Triple-A Student of 2022 (top 5%)',
+    '2019-2021 Outstanding Student Cadre, Academic Excellence Scholarship',
+    '2019-2020 Outstanding Student Cadre, Academic Excellence Scholarship',
   ];
 
   const awards = [
-    'Aug. 2019. National Second Prize, China National University Computer Design Competition',
-    'Apr. 2019. National Third Prize, China National College Team Programming Ladder Competition',
-    'May 2019. Provincial Silver Award, Fujian Province College Student Programming Competition',
+    '2021 National Second Prize, National College English Vocabulary Competitionn',
+    '2020 National Second Prize, National Innovation English Challenge',
+    '2020 Honorable Mention Chinese Culture International Translation Competition',
   ];
 
-  const academicAchievements = [
+  const academic_Achievements = [
     {
-      title: 'Point, Segment and Count: A Generalized Framework for Object Counting, CVPR 2024',
-      image: psc,
-      description: "We introduce a novel framework for class-agnostic object counting, which combines SAM and CLIP, addressing the limitations of current counting methods that depend heavily on density maps. The framework improves efficiency and accuracy in detecting small, crowded objects.",
-      paperLink: 'https://arxiv.org/abs/2311.12386',
-      code: 'https://github.com/Hzzone/PseCo'
+      title: 'Chinese Literary Perception under Western Discourse: A Case Study of the Aesthetic View of Tang Poetry in Wilhelm Grube's 'History of Chinese Literature',
+      description: "First Author, published in the annual journal German Studies (2022)",
     },
     {
-      title: 'Cross-head Supervision for Crowd Counting with Noisy Annotations, ICASSP 2023',
-      image: chsnet,
-      description: 'This study aims to address the prevalent issue of label noise in crowd datasets. We propose a learning paradigm that utilizes a dual-branch network consisting of convolutional and transformer components for mutual supervision. This approach effectively leverages supervisory information in noisy regions, thereby enhancing counting accuracy.',
-      paperLink: 'https://ieeexplore.ieee.org/document/10095636/',
-      code: 'https://github.com/RaccoonDML/CHSNet'
-    },
-    {
-      title: 'Adjustable Memory-efficient Image Super-resolution via Individual Kernel Sparsity, ACMMM 2022',
-      image: iks,
-      description: "To abtain sparsed image super-resolution models, we introduce a dynamic threshold learning algorithm in which the threshold adaptively decays under the guidance of target sparsity. The proposed method can achieve parameter sparsity of 50% to 70% while maintaining the existing super-resolution model's accuracy.",
-      paperLink: 'https://dl.acm.org/doi/10.1145/3503161.3547768',
-      code: 'https://github.com/RaccoonDML/IKS'
+      title: 'Multiple Paths to a Doctorate Degree: A Comparative Study on Doctoral Education and Evaluation at Universities of Applied Sciences',
+      description: 'First Author, published in the journal Shanghai Graduate Education (2023, first issue)',
     },
   ];
 
-  const patents = [
-    'A Differentiated Additive Noise Method in Federated Learning Gradient Exchange, Patent No. CN111260061A',
-    'An Efficient Image Super-Resolution Method Based on Adjustable Kernel Sparsity, Application No. 202210579505.2'
+  const campus_activities = [
+    '2023-Now President of Fudan Job Hunt Club',
+    '2024-Now Vice President of Fudan University Blockchain Association',
+    '2022-2023 Core Member of Fudan University Graduate Admissions Promotion Team',
+    '2020-2021 Director of External Relations, Students\' Union, Huazhong University of Science and Technology',
+    '2019-2021 Core Member of University History Museum, Huazhong University of Science and Technology'
+  ];
+  const innovation_practice_projects = [
+    '2020-2021 Provincial Project, Project Leader, "19th Century German Writings on the History of Chinese Literature."',
+    '2019-2020 University Project, Participant, "The History and Policies of Waste Classification in Germany and Their Significance for Waste Classification Policies in China.'
   ];
 
 
-  const projects = [
+  const internships = [
     {
-      title: 'Controllable Diffusion Model Internship @HikVision',
-      description: " Jun. 2023 - Aug. 2023. I'm responsible for generating facial data in various business scenarios using ControlNet, and investigating the impact of different control conditions (keypoints, segmentation maps, IDs) and their interaction on diffusion model's generation performance and controllability.",
+      title: 'Strategic Analysis in Autonomous Driving Group @Baidu (China) Co., Ltd.',
+      description: "07/2024 - 09/2024. \nConducted a study on the IPO of WeRide, produced 2 reports and 10 core insights for references. \nConducted market analysis based on foreign investment research reports, producing 7 weekly reports.",
     },
     {
-      title: 'Diffusion Model for Crowd Counting',
-      description: "Mar. 2023. I leveraged diffusion models for crowd counting by treating counting as a conditional density map generation task. The algorithm recovered density maps from Gaussian noise with the diffusion model conditioned on the original crowd images, which achieved state-of-the-art results on the SHB dataset.",
+      title: 'Voice Interaction Product Manager @iFLYTEK Co., Ltd.',
+      description: "04/2024 - 07/2024. \nAssisted in multilingual TTS business, resulting in 3 detailed feature lists. \nAnalyzed key indicators for improved performance: 5pt in recognition rate and 3pt in wake-up rate.",
     },
     {
-      title: 'Video Algorithm Internship @Simo Technology',
-      description: "Mar. 2021 - May 2021. I developed expertise in VapourSynth and FFmpeg video processing workflow. My contributions included optimizing the Vine de-halo algorithm and integrating it into the video processing pipeline. And I developed an offline config generation tool GUI via wxPython.",
+      title: 'Market Research and Portfolio Planning @General Motors Company',
+      description: "01/2024 - 04/2024. \nConducted research on vehicle and consumer, producing 2 insightful reports with 2 recommendations adopted. \nPrepared reports for an imported SUV case with quantitative and qualitative research.",
     },
     {
-      title: 'Danmao NFT Development',
-      description: "Apr. 2023 - Jun. 2023. I led the development of Danmao series NFTs as the head of the Development Department at the Fudan University Blockchain Association. This project aimed to lower the barrier for web2 users to enter web3. I’m responsible for NFT designing, frontend, and smart contract. Project website: https://danmao.xyz",
-    },
-    {
-      title: 'Handwritten Mathematical Formula Inference System',
-      description: "Apr. 2019 - Jul. 2019. Our team, utilizing Java, developed this system with sophisticated image preprocessing techniques such as binarization, denoising, and skew correction. The system features dynamic image segmentation, preliminary coarse recognition, and employs convolutional neural networks for precise single-character recognition. This innovative approach led us to win a prestigious National Second Prize.",
+      title: 'Market Research (ToB Cloud Products) @HashKey Group',
+      description: "06/2023 - 10/2023. \nCompleted market analysis and forecasts for target regions, proposing 4 recommendations adopted by the team. \nAnalyzed competitive products with in-depth research on 2 strong competitors.",
     },
   ];
 
   const hobbies = [
-    'Reading',
-    'Badminton',
-    'Bodybuilding',
-    'Snowboarding',
-    "Texas Hold'em",
+    'Skiing',
+    'Traveling',
+    'Yoga',
+    'Oil Painting',
+    'Texas Hold\'em',
   ];
 
   const Interests = [
-    'Computer vision',
-    'Image super-resolution',
-    'Crowd counting',
-    'Diffusion models',
+    'AI & LLM',
+    'Blockchain & Web3',
+    'Autonomous Driving',
+    'Quantitative Trading',
   ];
 
   return (
     <div className='container w-full mx-auto'>
       <div class="flex flex-col md:flex-row gap-4">
         <div class="container basis-1/4 bg-gradient-to-b from-gray-200 rounded-xl flex-col space-y-8 p-4 max-w-sm mx-auto">
-          <img  src={danmao} className="mx-auto rounded-3xl shadow-xl" />
-          <h1 className="text-2xl font-bold text-primary">Mingliang Dai</h1>
+          <img  src={self_photo} className="mx-auto rounded-3xl shadow-xl" />
+          <h1 className="text-2xl font-bold text-primary">Zhengzhi Zhou(NikaChou)</h1>
 
           <div>
             <h2 className="text-lg font-bold">Basic Info</h2>
@@ -126,19 +112,19 @@ function App() {
               <div>{personalInfo.location}</div>
               <div>{personalInfo.contact}</div>
               <div className='flex flex-row justify-center mt-4'>
-                <a href={personalInfo.googleScholar} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_google_scholar} alt='scholar'/></a>
+                <a href={personalInfo.linkedin} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_linkedin} alt='linkedin'/></a>
                 <a href={personalInfo.github} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_github} alt='github'/></a>
                 <a href={personalInfo.twitter} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_twitter} alt='twitter'/></a>
-                <a href={personalInfo.csdn} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_csdn} alt='csdn'/></a>
+                <a href={personalInfo.redbook} target="_blank"><img className="w-6 h-6 mx-1 hover:shadow-lg" src={img_redbook} alt='redbook'/></a>
               </div>
             </div>
           </div>
 
           <div>
-            <h2 className="text-lg font-bold">Research Interests</h2>
+            <h2 className="text-lg font-bold">Interests</h2>
             <div className='grid grid-cols-2 gap-4'>
-              {Interests.map((hobby, index) => (
-                <div className="bg-slate-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{hobby}</div>
+              {Interests.map((interest, index) => (
+                <div className="bg-slate-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{interest}</div>
               ))}
             </div>
           </div>
@@ -157,14 +143,14 @@ function App() {
         <div class="container basis-3/4 rounded-xl text-left p-4 space-y-12">
           <section className="">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Education</h2>
-            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>B.S. in Computer Science and Technology, <span className='font-bold'>Xiamen University</span>, Sep. 2017 - Jun. 2021. <span className='font-bold'>GPA-3.85/4.0</span></li>
-            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>M.S. in Computer Applied Technology, <span className='font-bold'>Fudan University</span>, Sep. 2021 - Jun. 2024. <span className='font-bold'>IELTS-7.0(6.0), reading 9.0</span></li>
+            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>M.S. in German Language and Literature, <span className='font-bold'>Fudan University</span>, Sep. 2022 - Jun. 2025. <span className='font-bold'>GPA-3.85/4.00</span></li>
+            <li className='rounded-lg hover:bg-gradient-to-r from-primary'>B.S. in German Language and Literature, <span className='font-bold'>Huazhong University of Science and Technology</span>, Sep. 2018 - Jun. 2022. <span className='font-bold'>GPA-3.93/4.00</span></li>
           </section>
 
           <section>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Awards and Honors</h2>
-            {honors.map((award, index) => (
-              <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
+            {honors.map((honor, index) => (
+              <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
             ))}
             <div className='text-lg pt-2 pb-1 font-bold'>Competition Awards</div>
             {awards.map((award, index) => (
@@ -175,58 +161,46 @@ function App() {
           <section className="mb-8">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Publications</h2>
             <div className="grid grid-cols-1 gap-6">
-              {academicAchievements.map((achievement, index) => (
+              {academic_Achievements.map((achievement, index) => (
                 <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
                   <h3 className="text-lg font-semibold mb-2">{achievement.title}</h3>
-                  <img
-                    src={achievement.image}
-                    alt={achievement.title}
-                    className="w-auto h-auto mb-2 rounded-xl mx-auto"
-                  />
-                  <p className="text-gray-600">{achievement.description}</p>
-                  <div className='flex justify-center gap-4'>
-                    <a
-                      href={achievement.paperLink}
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      paper link
-                    </a>
-                    <a
-                      href={achievement.code}
-                      className="text-primary hover:underline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      code link
-                    </a>
-                  </div>
+                  <div className="text-gray-600">{achievement.description}</div>
                 </div>
               ))}
             </div>
 
-            <div className='text-xl pt-8 pb-2 font-bold'>National Invention Patents</div>
+            <div className='text-xl pt-8 pb-2 font-bold'>Campus Activities</div>
             <div className="grid grid-cols-1 gap-2">
-              {patents.map((patent, index) => (
-                <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">{patent}</div>
+              {campus_activities.map((activity, index) => (
+                <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">{activity}</div>
               ))}
             </div>
 
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Projects and Internship Experience</h2>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Innovation Practice Projects</h2>
             <ul className="list-disc space-y-2">
-              {projects.map((project, index) => (
+              {innovation_practice_projects.map((project, index) => (
                 <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
                   <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <div key={index} className="text-gray-600">{project.description}</div>
+                  <div className="text-gray-600">{project.description}</div>
                 </div>
               ))}
             </ul>
           </section>
 
+          <section className="mb-8">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Internship Experience</h2>
+            <ul className="list-disc space-y-2">
+              {internships.map((internship, index) => (
+                <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
+                  <h3 className="text-lg font-semibold mb-2">{internship.title}</h3>
+                  <div className="text-gray-600">{internship.description}</div> 
+                </div>
+              ))}
+            </ul>
+          </section>
         </div>
       </div>
     </div >
