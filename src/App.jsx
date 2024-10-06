@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import self_photo from './assets/seaside.jpg'; // 使用require或import导入图片
+import self_photo from './assets/seaside.jpg';
 import img_linkedin from './assets/linkedin.svg';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
@@ -8,7 +8,6 @@ import img_redbook from './assets/xiaohongshu.png';
 
 
 function App() {
-  // 示例数据，你需要替换成自己的信息
   const personalInfo = {
     name: 'Zhengzhi Zhou',
     contact: 'monikazhou@foxmail.com',
@@ -58,11 +57,11 @@ function App() {
     '2020-2021 Director of External Relations, Students\' Union, Huazhong University of Science and Technology',
     '2019-2021 Core Member of University History Museum, Huazhong University of Science and Technology'
   ];
+
   const innovation_practice_projects = [
     '2020-2021 Provincial Project, Project Leader, "19th Century German Writings on the History of Chinese Literature."',
     '2019-2020 University Project, Participant, "The History and Policies of Waste Classification in Germany and Their Significance for Waste Classification Policies in China.'
   ];
-
 
   const internships = [
     {
