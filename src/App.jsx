@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import self_photo from './assets/seaside.jpg'; // 使用require或import导入图片
 import img_linkedin from './assets/linkedin.png';
 import img_github from './assets/github.svg';
 import img_twitter from './assets/twitter.svg';
 import img_redbook from './assets/Xiaohongshu.png';
-import logoBaidu from './assets/baidu_logo.jpg'; // 替换为实际路径
+import logoBaidu from './assets/baidu_logo.png'; // 替换为实际路径
 import logoIFLYTEK from './assets/iflytek_logo.jpg'; // 替换为实际路径
 import logoGM from './assets/gm_logo.png'; // 替换为实际路径
 import logoHashKey from './assets/hashkey_logo.png'; // 替换为实际路径
 
 
 function App() {
+  const [activeTab, setActiveTab] = useState('education');
+  
   // 示例数据，你需要替换成自己的信息
   const personalInfo = {
     name: 'Zhengzhi Zhou',
@@ -26,8 +28,9 @@ function App() {
   };
 
   const educations = [
-    'B.S. in German Language and Literature, Huazhong University of Science and Technology, Sep. 2018 - Jun. 2022. GPA-3.93/4.00',
-    'M.S. in German Language and Literature, Fudan University, Sep. 2022 - Jun. 2025 (expected), GPA-3.85/4.00',
+    'B.S. in German Language and Literature, Huazhong University of Science and Technology, 2018 - 2022. GPA-3.93/4.00',
+    'M.S. in German Language and Literature, Fudan University, 2022 - 2025 (expected), GPA-3.85/4.00',
+    'Exchange Program, University of Cologne, 2023 - 2024',
     // 'Ph.D in Version Control Theory, GitHub University, 2018 (expected)'
   ];
 
@@ -82,8 +85,8 @@ function App() {
       description: (
         <>
           2024, Intern, in Autonomous Driving Group <br />
-          Conducted a study on the IPO of WeRide, produced 2 reports and 10 core insights for references. <br />
-          Conducted market analysis based on foreign investment research reports, producing 7 weekly reports.
+          - Conducted a study on the IPO of WeRide, produced 2 reports and 10 core insights for references. <br />
+          - Conducted market analysis based on foreign investment research reports, producing 7 weekly reports.
         </>
       ),
     },
@@ -93,8 +96,8 @@ function App() {
       description: (
         <>
           2024, Intern, Voice Interaction APP <br />
-          Assisted in multilingual TTS business, resulting in 3 detailed feature lists. <br />
-          Analyzed key indicators for improved performance: 5pt in recognition rate and 3pt in wake-up rate.
+          - Assisted in multilingual TTS business, resulting in 3 detailed feature lists. <br />
+          - Analyzed key indicators for improved performance: 5pt in recognition rate and 3pt in wake-up rate.
         </>
       ),
     },
@@ -104,8 +107,8 @@ function App() {
       description: (
         <>
           2024, Intern, in Planning Department <br />
-          Conducted research on vehicle and consumer, producing 2 insightful reports with 2 recommendations adopted. <br />
-          Prepared reports for an imported SUV case with quantitative and qualitative research.
+          - Conducted research on vehicle and consumer, producing 2 insightful reports with 2 recommendations adopted. <br />
+          - Prepared reports for an imported SUV case with quantitative and qualitative research.
         </>
       ),
     },
@@ -115,18 +118,19 @@ function App() {
       description: (
         <>
           2023, Intern, in ToB Cloud Products Department <br />
-          Completed market analysis and forecasts for target regions, proposing 4 recommendations adopted by the team. <br />
-          Analyzed competitive products with in-depth research on 2 strong competitors.
+          - Completed market analysis and forecasts for target regions, proposing 4 recommendations adopted by the team. <br />
+          - Analyzed competitive products with in-depth research on 2 strong competitors.
         </>
       ),
     },
   ];
 
   const hobbies = [
-    'Skiing',
     'Traveling',
+    'Snowboarding',
     'Yoga',
     'Oil Painting',
+    'Museum',
     'Texas Hold\'em',
   ];
 
@@ -137,12 +141,181 @@ function App() {
     'Web3',
     'Autonomous Driving',
     'Office Automation',
-    'Global Social Media Marketing',
+    'Overseas consumption',
+    'Cross-Border E-Commerce',
   ];
+
+  const volunteerActivities = [
+    '2023年 参与上海马拉松志愿者活动',
+    '2022年 参与社区疫情防控志愿服务',
+    '2021年 参与山区支教志愿活动'
+  ];
+
+  const renderContent = () => {
+    switch(activeTab) {
+      case 'education':
+        return (
+          <div className="flex flex-col space-y-8">
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">教育经历</h2>
+              <ul className="list-disc pl-5 space-y-2">
+                {educations.map((edu, index) => (
+                  <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{edu}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">荣誉奖项</h2>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">校园荣誉</h3>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {honors.map((honor, index) => (
+                      <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">竞赛奖项</h3>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {awards.map((award, index) => (
+                      <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">学术成果</h2>
+              <div className="grid grid-cols-1 gap-6">
+                {academic_Achievements.map((achievement, index) => (
+                  <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
+                    <h3 className="text-lg font-semibold mb-2">{achievement.title}</h3>
+                    <div className="text-gray-600">{achievement.description}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">校园活动</h2>
+              <ul className="list-disc pl-5 space-y-2">
+                {campus_activities.map((activity, index) => (
+                  <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{activity}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">创新实践项目</h2>
+              <div className="grid grid-cols-1 gap-4">
+                {innovation_practice_projects.map((project, index) => (
+                  <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-4 hover:bg-gray-300">
+                    <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                    <div className="text-gray-600">{project.description}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        );
+      case 'experience':
+        return (
+          <div className="flex flex-col space-y-8">
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">实习经历</h2>
+              <div className="space-y-6">
+                {internships.map((internship, index) => (
+                  <div key={index} className="flex items-start space-x-4 p-4 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200">
+                    <img src={internship.logo} alt={`${internship.title} logo`} className="w-16 h-16 object-contain" />
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">{internship.title}</h3>
+                      <div className="text-gray-600">{internship.description}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        );
+      case 'personal':
+        return (
+          <div className="flex flex-col space-y-8">
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">兴趣爱好</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
+                  <h3 className="text-lg font-semibold mb-2">旅游</h3>
+                  <p>热爱探索世界各地的文化和风景，已经去过20多个国家。</p>
+                </div>
+                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
+                  <h3 className="text-lg font-semibold mb-2">摄影</h3>
+                  <p>喜欢用镜头捕捉生活中的美好瞬间，擅长风景和人像摄影。</p>
+                </div>
+                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
+                  <h3 className="text-lg font-semibold mb-2">滑雪</h3>
+                  <p>每年冬季都会去不同的滑雪胜地体验刺激的滑雪运动。</p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">艺术鉴赏</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
+                  <h3 className="text-lg font-semibold mb-2">绘画</h3>
+                  <p>业余时间喜欢素描和水彩创作，曾参加多次艺术展览。</p>
+                </div>
+                <div className="bg-gray-100 p-4 rounded-lg shadow-md hover:bg-gray-200">
+                  <h3 className="text-lg font-semibold mb-2">美术馆</h3>
+                  <p>经常参观各地美术馆，欣赏不同流派的艺术作品，拓展艺术视野。</p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">志愿活动</h2>
+              <ul className="list-disc pl-5 space-y-2">
+                {volunteerActivities.map((activity, index) => (
+                  <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{activity}</li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className='container w-full mx-auto'>
-      <div className="flex flex-col md:flex-row gap-4">
+      <nav className="bg-gray-800 p-4">
+        <ul className="flex justify-center space-x-4">
+          <li>
+            <button
+              className={`text-white ${activeTab === 'education' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('education')}
+            >
+              教育经历
+            </button>
+          </li>
+          <li>
+            <button
+              className={`text-white ${activeTab === 'experience' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('experience')}
+            >
+              实习经历
+            </button>
+          </li>
+          <li>
+            <button
+              className={`text-white ${activeTab === 'personal' ? 'font-bold' : ''}`}
+              onClick={() => setActiveTab('personal')}
+            >
+              个人生活
+            </button>
+          </li>
+        </ul>
+      </nav>
+      
+      <div className="flex flex-col md:flex-row gap-4 mt-4">
         <div className="container basis-1/4 bg-gradient-to-b from-gray-200 rounded-xl flex-col space-y-8 p-4 max-w-sm mx-auto">
           <img src={self_photo} className="mx-auto rounded-3xl shadow-xl" />
           <h1 className="text-2xl font-bold text-primary">Zhengzhi Zhou</h1>
@@ -167,7 +340,7 @@ function App() {
             <h2 className="text-lg font-bold">Interests</h2>
             <div className='grid grid-cols-2 gap-4'>
               {Interests.map((interest, index) => (
-                <div className="bg-slate-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{interest}</div>
+                <div key={index} className="bg-slate-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{interest}</div>
               ))}
             </div>
           </div>
@@ -176,84 +349,15 @@ function App() {
             <h2 className="text-lg font-bold">Hobbies</h2>
             <div className='grid grid-cols-2 gap-4'>
               {hobbies.map((hobby, index) => (
-                <div className="bg-zinc-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{hobby}</div>
+                <div key={index} className="bg-zinc-300 p-2 rounded-md shadow-xl text-center overflow-hidden hover:bg-primary">{hobby}</div>
               ))}
             </div>
           </div>
   
         </div>
   
-        <div className="container basis-3/4 rounded-xl text-left p-4 space-y-12">
-          <section>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Education</h2>
-            <ul>
-              <li className='rounded-lg hover:bg-gradient-to-r from-primary'>M.S. in German Language and Literature, <span className='font-bold'>Fudan University</span>, Sep. 2022 - Jun. 2025. <span className='font-bold'>GPA-3.85/4.00</span></li>
-              <li className='rounded-lg hover:bg-gradient-to-r from-primary'>B.S. in German Language and Literature, <span className='font-bold'>Huazhong University of Science and Technology</span>, Sep. 2018 - Jun. 2022. <span className='font-bold'>GPA-3.93/4.00</span></li>
-            </ul>
-          </section>
-  
-          <section>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Awards and Honors</h2>
-            <div className='text-lg pt-2 pb-1 font-bold'>Campus Honors</div>
-            <ul>
-              {honors.map((honor, index) => (
-                <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{honor}</li>
-              ))}
-            </ul>
-            <div className='text-lg pt-2 pb-1 font-bold'>Competition Awards</div>
-            <ul>
-              {awards.map((award, index) => (
-                <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{award}</li>
-              ))}
-            </ul>
-          </section>
-  
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Publications</h2>
-            <div className="grid grid-cols-1 gap-6">
-              {academic_Achievements.map((achievement, index) => (
-                <div key={index} className="card rounded-lg shadow-md p-4 bg-gray-100 hover:bg-gray-300">
-                  <h3 className="text-lg font-semibold mb-2">
-                    {achievement.title.replace('German Studies', <strong>German Studies</strong>).replace('Shanghai Graduate Education', <strong>Shanghai Graduate Education</strong>)}
-                  </h3>
-                  <div className="text-gray-600">{achievement.description}</div>
-                </div>
-              ))}
-            </div>
-            <div className='text-xl pt-8 pb-2 font-bold'>Campus Activities</div>
-            <div className="grid grid-cols-1 gap-2">
-              {campus_activities.map((activity, index) => (
-                <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">{activity}</div>
-              ))}
-            </div>
-          </section>
-  
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Innovation Practice Projects</h2>
-            <div className="grid grid-cols-1 gap-2">
-              {innovation_practice_projects.map((project, index) => (
-                <div key={index} className="card rounded-lg shadow-md bg-gray-100 p-2 hover:bg-gray-300">
-                  <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
-                  <div className="text-gray-600">{project.description}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-  
-          <section className="mb-8">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Internship Experience</h2>
-            <ul className="list-disc space-y-2">
-              {internships.map((internship, index) => (
-                <li key={index} className="flex items-center">
-                  <img src={internship.logo} alt={`${internship.title} logo`} className="w-10 h-10 mr-2" />
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">{internship.title}</h3>
-                    <div className="text-gray-600">{internship.description}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
+        <div className="container basis-3/4 rounded-xl text-left p-4 space-y-12 min-h-[800px] flex flex-col justify-between">
+          {renderContent()}
         </div>
       </div>
     </div>
