@@ -559,6 +559,14 @@ function App() {
               {translations[language].personal}
             </button>
           </li>
+          <li>
+            <button
+              className={`text-white`}
+              onClick={() => window.open("https://nikas-private-organization.gitbook.io/untitled/", "_blank")}
+            >
+              Daily Notes
+            </button>
+          </li>
         </ul>
       </nav>
       
