@@ -30,6 +30,14 @@ import photography3 from './assets/Berlin.jpg';
 import photography4 from './assets/Cologne.jpg';
 import photography5 from './assets/Milan.jpg';
 import photography6 from './assets/Venice.jpg';
+import museum1 from './assets/museum1.jpg';
+import museum2 from './assets/museum2.jpg';
+import museum3 from './assets/museum3.jpg';
+import museum4 from './assets/museum4.jpg';
+import painting1 from './assets/painting1.jpg';
+import painting2 from './assets/painting2.jpg';
+import painting3 from './assets/painting3.jpg';
+import painting4 from './assets/painting4.jpg';
 
 function App() {
   const [activeTab, setActiveTab] = useState('campus');
@@ -209,7 +217,19 @@ function App() {
       projects: "Research Projects",
       hobbies: "Hobbies",
       arts: "Art Appreciation",
-      volunteer: "Volunteer Activities"
+      volunteer: "Volunteer Activities",
+      france: "France",
+      italy: "Italy",
+      belgium: "Belgium",
+      germany: "Germany",
+      austria: "Austria",
+      netherlands: "Netherlands",
+      sweden: "Sweden",
+      england: "England",
+      norway: "Norway",
+      poland: "Poland",
+      scotland: "Scotland",
+      spain: "Spain"
     },
     zh: {
       campus: "校园生活",
@@ -224,7 +244,19 @@ function App() {
       projects: "研究项目",
       hobbies: "兴趣爱好",
       arts: "艺术鉴赏",
-      volunteer: "志愿活动"
+      volunteer: "志愿活动",
+      france: "法国",
+      italy: "意大利",
+      belgium: "比利时",
+      germany: "德国",
+      austria: "奥地利",
+      netherlands: "荷兰",
+      sweden: "瑞典",
+      england: "英国",
+      norway: "挪威",
+      poland: "波兰",
+      scotland: "苏格兰",
+      spain: "西班牙"
     },
     de: {
       campus: "Campusleben",
@@ -239,7 +271,19 @@ function App() {
       projects: "Forschungsprojekte",
       hobbies: "Hobbys",
       arts: "Kunstverständnis",
-      volunteer: "Freiwilligenarbeit"
+      volunteer: "Freiwilligenarbeit",
+      france: "Frankreich",
+      italy: "Italien",
+      belgium: "Belgien",
+      germany: "Deutschland",
+      austria: "Österreich",
+      netherlands: "Niederlande",
+      sweden: "Schweden",
+      england: "England",
+      norway: "Norwegen",
+      poland: "Polen",
+      scotland: "Schottland",
+      spain: "Spanien"
     }
   };
 
@@ -352,20 +396,56 @@ function App() {
                 <div className="col-span-1 md:col-span-2 lg:col-span-3">
                   <h3 className="text-xl font-semibold mb-4">Traveling</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <img src={traveling1} alt="France" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling2} alt="Italy" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling3} alt="Belgium" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling4} alt="Germany" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling5} alt="Austria" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling6} alt="Netherlands" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling7} alt="Sweden" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling8} alt="England" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling9} alt="Norway" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling10} alt="Poland" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling11} alt="Scotland" className="w-full h-40 object-cover rounded-lg shadow-md" />
-                    <img src={traveling12} alt="Spain" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <div className="relative">
+                      <img src={traveling1} alt="France" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].france}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling2} alt="Italy" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].italy}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling3} alt="Belgium" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].belgium}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling4} alt="Germany" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].germany}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling5} alt="Austria" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].austria}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling6} alt="Netherlands" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].netherlands}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling7} alt="Sweden" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].sweden}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling8} alt="England" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].england}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling9} alt="Norway" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].norway}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling10} alt="Poland" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].poland}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling11} alt="Scotland" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].scotland}</p>
+                    </div>
+                    <div className="relative">
+                      <img src={traveling12} alt="Spain" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                      <p className="absolute bottom-2 left-2 text-white bg-black bg-opacity-50 p-1 rounded">{translations[language].spain}</p>
+                    </div>
                   </div>
-                  <p className="mt-4">Love exploring cultures and landscapes around the world, visited over 20 countries.</p>
+                  <p className="mt-4">Love exploring cultures and landscapes around the world, visited over 13 countries.</p>
                 </div>
                 <div className="col-span-1 md:col-span-2">
                   <h3 className="text-xl font-semibold mb-4">Photography</h3>
@@ -398,23 +478,51 @@ function App() {
                   <div className="grid grid-cols-2 gap-4">
                     <img src={museum1} alt="Louvre" className="w-full h-40 object-cover rounded-lg shadow-md" />
                     <img src={museum2} alt="British Museum" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={museum3} alt="British Museum" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={museum4} alt="British Museum" className="w-full h-40 object-cover rounded-lg shadow-md" />
                   </div>
                   <p className="mt-4">Frequently visit art museums to appreciate various art styles and broaden artistic vision.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold mb-4">Painting</h3>
-                  <div className="w-full h-40 bg-gray-300 rounded-lg shadow-md"></div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <img src={painting1} alt="Painting 1" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={painting2} alt="Painting 2" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={painting3} alt="Painting 3" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                    <img src={painting4} alt="Painting 4" className="w-full h-40 object-cover rounded-lg shadow-md" />
+                  </div>
                   <p className="mt-4">Enjoy sketching and watercolor painting in spare time, participated in several art exhibitions.</p>
                 </div>
               </div>
             </section>
             <section>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{translations[language].volunteer}</h2>
-              <ul className="list-disc pl-5 space-y-2">
-                {volunteerActivities.map((activity, index) => (
-                  <li key={index} className='rounded-lg hover:bg-gradient-to-r from-primary'>{activity}</li>
-                ))}
-              </ul>
+              <div>
+               
+                <ul className="list-disc pl-5 space-y-2">
+                  {language === 'zh' ? (
+                    <>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>上海犹太难民博物馆 - 导游志愿者 (2023)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>复旦大学 - 招生志愿者 (2022)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>校园历史博物馆 - 志愿导游 (2019-2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>武汉东湖公园 - 公园志愿者 (2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>武汉艺术博物馆 - 志愿者 (2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>湖北省中医医院 - 志愿者 (2020)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>校园马拉松 - 志愿者 (2020)</li>
+                    </>
+                  ) : (
+                    <>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Shanghai Jewish Refugees Museum - Guide Volunteer (2023)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Fudan University - Admission Volunteer (2022)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Campus History Museum - Volunteer Guide (2019-2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Wuhan East Lake Park - Park Volunteer (2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Wuhan Art Museum - Volunteer (2021)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Hubei Provincial Hospital of Traditional Chinese Medicine - Volunteer (2020)</li>
+                      <li className='rounded-lg hover:bg-gradient-to-r from-primary'>Campus Marathon - Volunteer (2020)</li>
+                    </>
+                  )}
+                </ul>
+              </div>
             </section>
           </div>
         );
